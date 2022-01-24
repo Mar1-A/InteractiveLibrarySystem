@@ -29,13 +29,7 @@ public class Library {
     }
 
     public List<Book> getBooks() {
-        List<Book> out = new ArrayList<>();
-
-        for (Book book : books.values()) {
-            if (!book.isDeleted()) {
-                out.add(book);
-            }
-        }
+        List<Book> out = new ArrayList<>( books.values());
         return Collections.unmodifiableList(out);
     }
 
@@ -85,14 +79,7 @@ public class Library {
      */
 
     public List<Patron> getPatrons() {
-        List<Patron> out = new ArrayList<>();
-
-        for (Patron patron : patrons.values()) {
-            if (!patron.isDeleted()) {
-                out.add(patron);
-            }
-        }
-
+        List<Patron> out = new ArrayList<>(patrons.values());
         return Collections.unmodifiableList(out);
     }
 }
